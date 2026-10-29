@@ -1,4 +1,4 @@
-﻿/* Set --hero-image to a local url(...) when final imagery is available. */
+/* Shared design tokens; the homepage photograph is configured in .forest-hero. */
 :root{color-scheme:dark;--bg:#101311;--surface:#191e1a;--text:#edf0e9;--muted:#a7b0a6;--accent:#b8d2ad;--border:#343e34;--hero-image:none;--radius:1.25rem;--space:clamp(4rem,8vw,8rem)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:7rem}
@@ -69,14 +69,12 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
 }
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 
-/* HOME / Forest at night
-   Add a local image: --hero-image: url("assets/forest-cabin.webp");
-   Paths are relative to this stylesheet. No image is required for the fallback.
-   When adding an image, set --hero-scenery-opacity: 0 to hide the CSS trees/cabin.
-   Keep the overlays for readable text; adjust --hero-image-position for the crop. */
+/* HOME / Forest photograph
+   Image paths are relative to this stylesheet. Change --hero-image to swap photos.
+   Keep the gradient fallback and readability overlays when replacing the image. */
 .forest-hero {
-  --hero-image-position: 70% center;
-  --hero-scenery-opacity: 1;
+  --hero-image: url("assets/images/cabin-in-the-forest.jpg");
+  --hero-image-position: 50% 62%;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -100,13 +98,14 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
   inset: 0;
   background-image: var(--hero-image);
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: var(--hero-image-position);
 }
 .forest-hero::after {
   content: "";
   z-index: -1;
   background:
-    linear-gradient(90deg, #090e0cf5 0%, #090e0ce8 30%, #090e0c95 53%, #090e0c10 80%),
+    linear-gradient(90deg, #090e0ce8 0%, #090e0cc4 28%, #090e0c65 48%, #090e0c14 72%),
     linear-gradient(0deg, var(--bg), transparent 24%, transparent 80%, #080d0b65);
 }
 .hero-inner {
@@ -137,81 +136,14 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
   text-transform: uppercase;
 }
 .caption-line { width: 3rem; height: 1px; background: #b8d2ad65; }
-.forest-ridge {
-  position: absolute;
-  inset: 28% -5% 0;
-  background: #1b2d23;
-  opacity: calc(var(--hero-scenery-opacity) * .55);
-  clip-path: polygon(0 40%, 12% 27%, 27% 38%, 44% 18%, 59% 26%, 77% 4%, 100% 21%, 100% 100%, 0 100%);
-}
-.forest-trees {
-  position: absolute;
-  inset: 0;
-  opacity: var(--hero-scenery-opacity);
-}
-.forest-trees i {
-  position: absolute;
-  bottom: 13%;
-  left: 48%;
-  width: 13%;
-  height: 53%;
-  background: #0b1a13;
-  clip-path: polygon(50% 0, 66% 23%, 59% 22%, 78% 45%, 67% 42%, 91% 69%, 75% 65%, 100% 91%, 54% 89%, 54% 100%, 46% 100%, 46% 89%, 0 91%, 25% 65%, 9% 69%, 33% 42%, 22% 45%, 41% 22%, 34% 23%);
-}
-.forest-trees--distant i:nth-child(2) { left: 58%; height: 65%; width: 15%; }
-.forest-trees--distant i:nth-child(3) { left: 72%; height: 48%; }
-.forest-trees--distant i:nth-child(4) { left: 82%; height: 75%; width: 18%; }
-.forest-trees--distant i:nth-child(5) { left: 94%; height: 60%; }
-.forest-trees--distant i:nth-child(6) { left: 35%; height: 54%; }
-.forest-trees--distant i:nth-child(7) { left: 44%; height: 43%; }
-.forest-trees--distant i:nth-child(8) { left: 65%; height: 42%; }
-.forest-trees--distant i:nth-child(9) { left: 8%; height: 70%; width: 22%; }
-.forest-mist {
-  position: absolute;
-  inset: 30% -10% 3%;
-  background:
-    radial-gradient(ellipse at 78% 65%, #a9c8ae20, transparent 48%),
-    radial-gradient(ellipse at 65% 70%, #90b09a18, transparent 60%);
-}
-.forest-cabin {
-  position: absolute;
-  width: clamp(140px, 16vw, 250px);
-  height: clamp(115px, 13vw, 200px);
-  right: 15%;
-  bottom: 20%;
-  opacity: var(--hero-scenery-opacity);
-  background: linear-gradient(115deg, #26382a, #0c140f 75%);
-  clip-path: polygon(50% 0, 100% 43%, 91% 43%, 91% 100%, 9% 100%, 9% 43%, 0 43%);
-}
-.forest-cabin::before {
-  content: "";
-  position: absolute;
-  inset: 42% 9% 0;
-  background: repeating-linear-gradient(0deg, transparent 0 13px, #0004 14px 15px);
-}
-.cabin-window {
-  position: absolute;
-  left: 40%;
-  top: 53%;
-  width: 22%;
-  height: 29%;
-  background: linear-gradient(90deg, transparent 46%, #263425 46% 54%, transparent 54%),
-    linear-gradient(0deg, transparent 46%, #263425 46% 54%, transparent 54%), #c0c295;
-  box-shadow: 0 0 30px 12px #c9d2a333;
-}
-.forest-trees--near i { bottom: -12%; background: #070e0a; left: 88%; height: 105%; width: 24%; }
-.forest-trees--near i:nth-child(2) { left: 40%; height: 55%; width: 18%; }
-.forest-trees--near i:nth-child(3) { left: -12%; height: 100%; width: 32%; }
-.forest-trees--near i:nth-child(4) { left: 80%; height: 53%; width: 17%; }
-.forest-trees--near i:nth-child(5) { left: 26%; height: 32%; width: 15%; }
 @media (max-width: 900px) {
   .hero-inner { min-height: 780px; }
   .hero-copy { max-width: 580px; }
   .forest-hero::after {
-    background: linear-gradient(90deg, #090e0cf5, #090e0cc9 55%, #090e0c40),
+    background: linear-gradient(90deg, #090e0ce8, #090e0ca6 48%, #090e0c26),
       linear-gradient(0deg, var(--bg), transparent 30%);
   }
-  .forest-cabin { right: 8%; bottom: 12%; }
+  .forest-hero { --hero-image-position: 48% 60%; }
   .hero-caption { bottom: 2rem; }
 }
 @media (max-width: 600px) {
@@ -221,7 +153,6 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
     background: linear-gradient(180deg, #090e0cf2 0%, #090e0ce6 46%, #090e0c65 76%, var(--bg)),
       linear-gradient(90deg, #090e0c80, transparent);
   }
-  .forest-cabin { right: 20%; bottom: 8%; width: 150px; height: 125px; }
-  .forest-trees--distant i { bottom: 4%; }
+  .forest-hero { --hero-image-position: 51% center; }
   .hero-caption { bottom: 1.6rem; left: 0; right: auto; font-size: .58rem; letter-spacing: .1em; }
 }
