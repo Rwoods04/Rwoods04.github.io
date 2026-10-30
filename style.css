@@ -1,4 +1,4 @@
-/* Shared design tokens; the homepage photograph is configured in .forest-hero. */
+﻿/* Shared design tokens; the homepage photograph is configured in .forest-hero. */
 :root{color-scheme:dark;--bg:#101311;--surface:#191e1a;--text:#edf0e9;--muted:#a7b0a6;--accent:#b8d2ad;--border:#343e34;--hero-image:none;--radius:1.25rem;--space:clamp(4rem,8vw,8rem)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:7rem}
@@ -155,4 +155,154 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
   }
   .forest-hero { --hero-image-position: 51% center; }
   .hero-caption { bottom: 1.6rem; left: 0; right: auto; font-size: .58rem; letter-spacing: .1em; }
+}
+
+/* EDUCATION / All rules are scoped to protect the approved homepage. */
+.education-page .education-hero {
+  position: relative;
+  padding-block: var(--space) 4rem;
+  background: radial-gradient(ellipse at 85% 20%, #b8d2ad12, transparent 60%);
+}
+.education-page .education-hero h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); max-width: 1000px; }
+.education-page .education-hero .lead { max-width: 43rem; }
+.education-page .education-section { padding-block: 3.5rem; border-top: 1px solid var(--border); }
+.education-page .education-hint,
+.education-page .education-intro { color: var(--muted); max-width: 44rem; }
+.education-page .education-hint { font-size: .8rem; max-width: 15rem; margin-bottom: 0; }
+.education-page .academic-timeline { list-style: none; padding: 0; margin: 3rem 0 0; }
+.education-page .timeline-milestone {
+  position: relative;
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 3.5rem;
+  padding-bottom: 2.5rem;
+}
+.education-page .timeline-milestone::before {
+  content: "";
+  position: absolute;
+  left: 213px;
+  top: 1.2rem;
+  bottom: -1.2rem;
+  width: 1px;
+  background: linear-gradient(var(--accent), var(--border));
+}
+.education-page .timeline-milestone:last-child { padding-bottom: 0; }
+.education-page .timeline-milestone:last-child::before { bottom: 0; background: var(--border); }
+.education-page .timeline-milestone::after {
+  content: "";
+  position: absolute;
+  left: 208px;
+  top: 1rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: var(--bg);
+  box-shadow: 0 0 0 5px #b8d2ad0d;
+  transition: background .2s, box-shadow .2s;
+}
+.education-page .timeline-milestone:first-child::after,
+.education-page .timeline-milestone:hover::after,
+.education-page .timeline-milestone:focus-within::after {
+  background: var(--accent);
+  box-shadow: 0 0 0 6px #b8d2ad15, 0 0 24px #b8d2ad25;
+}
+.education-page .timeline-date { padding-top: .6rem; font-size: .85rem; color: var(--muted); }
+.education-page .timeline-date p { margin-top: 1rem; }
+.education-page .academic-status,
+.education-page .honors-label {
+  display: inline-block;
+  border: 1px solid #b8d2ad45;
+  padding: .3rem .8rem;
+  border-radius: 99px;
+  color: var(--accent);
+  font-size: .75rem;
+}
+.education-page .timeline-panel {
+  padding: clamp(1.4rem, 3vw, 2.5rem);
+  background: radial-gradient(ellipse at top right, #b8d2ad0d, transparent 65%), var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color .2s;
+}
+.education-page .timeline-panel:hover,
+.education-page .timeline-panel:focus-within { border-color: #b8d2ad70; }
+.education-page .timeline-panel h3 { font-size: clamp(1.5rem, 2.6vw, 2.2rem); max-width: 36rem; }
+.education-page .timeline-panel .eyebrow { margin-bottom: 1rem; }
+.education-page .degree-name { color: var(--text); font-size: 1.1rem; margin-bottom: .7rem; }
+.education-page .degree-program { color: var(--muted); }
+.education-page .academic-details { border-top: 1px solid var(--border); margin-top: 1.8rem; }
+.education-page summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  list-style: none;
+  padding: 1.2rem .2rem;
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 600;
+  transition: color .2s;
+}
+.education-page summary::-webkit-details-marker { display: none; }
+.education-page summary:hover,
+.education-page details[open] > summary { color: var(--accent); }
+.education-page summary:focus-visible { outline-offset: 3px; border-radius: .25rem; }
+.education-page .expand-icon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  position: relative;
+}
+.education-page .expand-icon::before,
+.education-page .expand-icon::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  left: 2px;
+  right: 2px;
+  top: 8px;
+  height: 1px;
+}
+.education-page .expand-icon::after { transform: rotate(90deg); transition: transform .2s; }
+.education-page details[open] > summary .expand-icon::after { transform: rotate(0); }
+.education-page .details-content { color: var(--muted); padding-bottom: .5rem; }
+.education-page details[open] > .details-content { animation: academic-open .25s ease-out; }
+@keyframes academic-open { from { opacity: .5; } to { opacity: 1; } }
+.education-page .academic-topics,
+.education-page .course-list { padding-left: 1.25rem; margin: 0 0 1rem; }
+.education-page li::marker { color: var(--accent); }
+.education-page .academic-topics li,
+.education-page .course-list li { padding: .25rem 0; }
+.education-page .degree-facts { margin: 0; }
+.education-page .degree-facts > div { display: grid; grid-template-columns: 130px 1fr; gap: 1rem; margin-bottom: .8rem; }
+.education-page dt { color: var(--accent); font-size: .85rem; }
+.education-page dd { margin: 0; }
+.education-page .coursework-grid,
+.education-page .academic-credentials { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; align-items: start; }
+.education-page .coursework-panel,
+.education-page .credential-panel { border: 1px solid var(--border); border-radius: 1rem; background: linear-gradient(135deg, #20291f80, #151a1580); }
+.education-page .coursework-panel { padding-inline: 1.25rem; }
+.education-page .coursework-panel[open] { border-color: #b8d2ad65; }
+.education-page .course-number { display: inline-block; width: 2rem; color: var(--accent); font-size: .7rem; font-weight: 400; }
+.education-page .credential-panel { padding: 2rem; }
+.education-page .credential-panel p:last-child { color: var(--muted); margin-bottom: 0; font-size: .9rem; }
+.education-page .education-closing { display: flex; justify-content: space-between; align-items: center; gap: 3rem; padding-block: var(--space); border-top: 1px solid var(--border); }
+.education-page .education-closing .btn { flex-shrink: 0; }
+@media (max-width: 900px) {
+  .education-page .timeline-milestone { grid-template-columns: 145px minmax(0, 1fr); gap: 2.5rem; }
+  .education-page .timeline-milestone::before { left: 164px; }
+  .education-page .timeline-milestone::after { left: 159px; }
+  .education-page .education-closing { align-items: flex-start; flex-direction: column; gap: 1rem; }
+}
+@media (max-width: 600px) {
+  .education-page .timeline-milestone { grid-template-columns: minmax(0, 1fr); gap: .5rem; padding-left: 1.5rem; }
+  .education-page .timeline-milestone::before { left: 4px; }
+  .education-page .timeline-milestone::after { left: -1px; }
+  .education-page .timeline-date p { margin-block: .5rem; }
+  .education-page .coursework-grid,
+  .education-page .academic-credentials { grid-template-columns: minmax(0, 1fr); }
+  .education-page .degree-facts > div { grid-template-columns: 1fr; gap: .15rem; }
+  .education-page .education-hero { padding-top: 4rem; }
+  .education-page .education-hint { max-width: none; }
 }
