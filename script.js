@@ -39,7 +39,7 @@ if ("IntersectionObserver" in window) {
       }
     });
   }, { threshold: 0.12 });
-  document.querySelectorAll(".card, .education-entry").forEach((element) => observer.observe(element));
+  document.querySelectorAll(".card, .education-entry, [data-story-reveal]").forEach((element) => observer.observe(element));
 }
 
 /* Project archive: HTML is the source of truth; without JS every preview is visible. */
