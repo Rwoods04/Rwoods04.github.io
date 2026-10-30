@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover Robert Woods' personal portfolio, home networking lab, and Raspberry Pi experiments.">
+  <meta name="description" content="Explore seven projects and concepts by Robert Woods, with clear development statuses, technology plans, and links to implemented portfolio work.">
   <meta name="theme-color" content="#101311">
-  <title>Projects &amp; Experiments | Robert Woods</title>
+  <title>Technical Project Archive | Robert Woods</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -26,11 +26,99 @@
       </div>
     </nav>
   </header>
-  <main id="main-content" tabindex="-1" class="container">
-<section class="page-intro"><p class="eyebrow">04 / Learning by doing</p><h1>Ideas.<br>Experiments.<br><span>Possibilities.</span></h1><p class="lead">A collection of learning projects, experiments, and technology I'm exploring.</p></section><section class="page-content" aria-label="Projects"><div class="card-grid">
-<article class="card"><span class="card-number">01 / WEB</span><h3>Personal Portfolio</h3><p>Building and maintaining this website using HTML, CSS, JavaScript, and GitHub.</p><span class="tag">HTML / CSS / JavaScript / Git</span></article>
-<article class="card"><span class="card-number">02 / NETWORKS</span><h3>Home Networking Lab</h3><p>Exploring networking, DNS, server management, and monitoring tools through hands-on projects.</p><span class="tag">Networking / Linux</span></article>
-<article class="card"><span class="card-number">03 / EXPLORATION</span><h3>Raspberry Pi Experiments</h3><p>Exploring single-board computers, network services, automation, and self-hosted tools.</p><span class="tag">Raspberry Pi / Linux</span></article></div><div class="hero-actions"><a class="btn" href="https://github.com/Rwoods04" target="_blank" rel="noopener noreferrer">Explore my GitHub ↗<span class="sr-only">(opens in a new tab)</span></a></div></section>
+  <main id="main-content" tabindex="-1" class="container archive-page">
+    <section class="archive-intro" aria-labelledby="archive-title"><p class="eyebrow">04 / Technical project archive</p><h1 id="archive-title">Work in progress.<br><span>Ideas in motion.</span></h1><p class="lead">An archive of implemented work, plans, and concepts. Explore each project for its purpose, technology decisions, and current scope.</p></section>
+    <section class="project-archive" aria-label="Project explorer" data-project-archive>
+      <div class="archive-filters" role="group" aria-label="Filter projects by category" hidden>
+        <button type="button" data-project-filter="All Projects" aria-pressed="true">All Projects</button>
+        <button type="button" data-project-filter="Web Development" aria-pressed="false">Web Development</button>
+        <button type="button" data-project-filter="Web Application" aria-pressed="false">Web Application</button>
+        <button type="button" data-project-filter="Networking" aria-pressed="false">Networking</button>
+        <button type="button" data-project-filter="Hardware &amp; Systems" aria-pressed="false">Hardware &amp; Systems</button>
+        <button type="button" data-project-filter="Automation" aria-pressed="false">Automation</button>
+        <button type="button" data-project-filter="Data &amp; Analytics" aria-pressed="false">Data &amp; Analytics</button>
+      </div>
+      <p class="archive-feedback" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+      <div class="archive-workspace">
+        <nav class="archive-selector" aria-label="Choose a project"><div class="archive-panel-label">Project index / 07</div><ol>
+          <li><a href="#project-portfolio" data-project-link><span class="archive-index" aria-hidden="true">01</span><span><span class="archive-link-title">Personal Portfolio</span><span class="archive-link-status">Implemented / Evolving</span></span><span class="archive-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="#project-modern-kitchen" data-project-link><span class="archive-index" aria-hidden="true">02</span><span><span class="archive-link-title">Modern Kitchen</span><span class="archive-link-status">Planning</span></span><span class="archive-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="#project-network-monitor" data-project-link><span class="archive-index" aria-hidden="true">03</span><span><span class="archive-link-title">Home Network Monitor</span><span class="archive-link-status">Scope to Verify</span></span><span class="archive-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="#project-pi-toolkit" data-project-link><span class="archive-index" aria-hidden="true">04</span><span><span class="archive-link-title">Raspberry Pi Toolkit</span><span class="archive-link-status">Scope to Verify</span></span><span class="archive-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="#project-garden" data-project-link><span class="archive-index" aria-hidden="true">05</span><span><span class="archive-link-title">Garden Management System</span><span class="archive-link-status">Scope to Verify</span></span><span class="archive-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="#project-job-assistant" data-project-link><span class="archive-index" aria-hidden="true">06</span><span><span class="archive-link-title">Job Application Assistant</span><span class="archive-link-status">Scope to Verify</span></span><span class="archive-arrow" aria-hidden="true">↗</span></a></li>
+          <li><a href="#project-finance" data-project-link><span class="archive-index" aria-hidden="true">07</span><span><span class="archive-link-title">Personal Finance Dashboard</span><span class="archive-link-status">Scope to Verify / Tentative</span></span><span class="archive-arrow" aria-hidden="true">↗</span></a></li>
+        </ol></nav>
+        <div class="archive-previews">
+          <article class="project-preview" id="project-portfolio" data-category="Web Development" aria-labelledby="title-portfolio">
+            <div class="preview-topline"><span class="eyebrow">Archive / 01</span><span class="project-status">Implemented / Evolving</span></div>
+            <p class="project-category">Web Development</p><h2 id="title-portfolio">Personal Portfolio</h2><p class="project-description">A responsive, multi-page portfolio documenting education, technical skills, projects, and professional development.</p>
+            <figure class="project-screenshot">
+              <img src="assets/images/portfolio-homepage.png" alt="Robert Woods portfolio homepage with sage-green introduction text and navigation over a forest and illuminated cabin photograph." loading="lazy" decoding="async">
+              <figcaption>Personal Portfolio / Homepage</figcaption>
+            </figure>
+
+            <div class="project-specs"><section aria-labelledby="tech-portfolio"><h3 id="tech-portfolio">Implemented technologies</h3><ul class="skill-list"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git</li><li>GitHub</li><li>GitHub Pages</li></ul></section><section aria-labelledby="features-portfolio"><h3 id="features-portfolio">Implemented functionality</h3><ul class="project-feature-list"><li>Multi-page navigation</li><li>Responsive layouts</li><li>Interactive sections</li><li>GitHub Pages deployment</li></ul></section></div>
+
+            <div class="hero-actions"><a class="btn primary" href="https://github.com/Rwoods04/Rwoods04.github.io" target="_blank" rel="noopener noreferrer">Repository ↗<span class="sr-only"> (opens in a new tab)</span></a><a class="btn" href="https://rwoods04.github.io/" target="_blank" rel="noopener noreferrer">Live site ↗<span class="sr-only"> (opens in a new tab)</span></a></div>
+          </article>
+          <article class="project-preview" id="project-modern-kitchen" data-category="Web Application" aria-labelledby="title-modern-kitchen">
+            <div class="preview-topline"><span class="eyebrow">Archive / 02</span><span class="project-status">Planning</span></div>
+            <p class="project-category">Web Application</p><h2 id="title-modern-kitchen">Modern Kitchen</h2><p class="project-description">A personal recipe manager and meal-planning application with grocery lists and a separate interactive public demonstration.</p>
+            <div class="project-visual"><span class="visual-corner" aria-hidden="true">02 / PREVIEW</span><p>No screenshot available.</p><span class="visual-note">Reserved for a future project image</span></div>
+            <!-- Replace .project-visual with a figure containing a local image and descriptive alt text when a screenshot is available. -->
+            <div class="project-specs"><section aria-labelledby="tech-modern-kitchen"><h3 id="tech-modern-kitchen">Proposed technologies</h3><ul class="skill-list"><li>React</li><li>TypeScript</li><li>Vite</li><li>Supabase</li><li>Cloudflare Pages Functions</li></ul></section><section aria-labelledby="features-modern-kitchen"><h3 id="features-modern-kitchen">Proposed functionality</h3><ul class="project-feature-list"><li>Personal recipe management</li><li>Meal planning and grocery lists</li><li>Separate interactive public demonstration</li></ul></section></div>
+            <p class="project-scope-note">Planning established; implementation not verified.</p>
+            <p class="project-links-note">Repository and demo links are not available yet.</p>
+          </article>
+          <article class="project-preview" id="project-network-monitor" data-category="Networking" aria-labelledby="title-network-monitor">
+            <div class="preview-topline"><span class="eyebrow">Archive / 03</span><span class="project-status">Scope to Verify</span></div>
+            <p class="project-category">Networking</p><h2 id="title-network-monitor">Home Network Monitor</h2><p class="project-description">Concept: Monitor local network devices, connectivity, and network health.</p>
+            <div class="project-visual"><span class="visual-corner" aria-hidden="true">03 / PREVIEW</span><p>No screenshot available.</p><span class="visual-note">Reserved for a future project image</span></div>
+            <!-- Replace .project-visual with a figure containing a local image and descriptive alt text when a screenshot is available. -->
+            <div class="project-specs"><section aria-labelledby="tech-network-monitor"><h3 id="tech-network-monitor">Technology stack</h3><ul class="skill-list"><li>Undecided</li></ul></section><section aria-labelledby="features-network-monitor"><h3 id="features-network-monitor">Proposed functionality</h3><ul class="project-feature-list"><li>Local device monitoring</li><li>Connectivity checks</li><li>Network health overview</li></ul></section></div>
+            <p class="project-scope-note">Concept only; implementation and scope have not been verified.</p>
+            <p class="project-links-note">Repository and demo links are not available yet.</p>
+          </article>
+          <article class="project-preview" id="project-pi-toolkit" data-category="Hardware &amp; Systems" aria-labelledby="title-pi-toolkit">
+            <div class="preview-topline"><span class="eyebrow">Archive / 04</span><span class="project-status">Scope to Verify</span></div>
+            <p class="project-category">Hardware &amp; Systems</p><h2 id="title-pi-toolkit">Raspberry Pi Toolkit</h2><p class="project-description">Concept: Practical utilities and experiments involving Raspberry Pi hardware, network services, and home infrastructure.</p>
+            <div class="project-visual"><span class="visual-corner" aria-hidden="true">04 / PREVIEW</span><p>No screenshot available.</p><span class="visual-note">Reserved for a future project image</span></div>
+            <!-- Replace .project-visual with a figure containing a local image and descriptive alt text when a screenshot is available. -->
+            <div class="project-specs"><section aria-labelledby="tech-pi-toolkit"><h3 id="tech-pi-toolkit">Technology stack</h3><ul class="skill-list"><li>Undecided</li></ul></section><section aria-labelledby="features-pi-toolkit"><h3 id="features-pi-toolkit">Proposed areas to explore</h3><ul class="project-feature-list"><li>Raspberry Pi utilities and experiments</li><li>Network services</li><li>Home infrastructure</li></ul></section></div>
+            <p class="project-scope-note">Concept only; implementation and scope have not been verified.</p>
+            <p class="project-links-note">Repository and demo links are not available yet.</p>
+          </article>
+          <article class="project-preview" id="project-garden" data-category="Web Application" aria-labelledby="title-garden">
+            <div class="preview-topline"><span class="eyebrow">Archive / 05</span><span class="project-status">Scope to Verify</span></div>
+            <p class="project-category">Web Application</p><h2 id="title-garden">Garden Management System</h2><p class="project-description">Concept: Manage planting schedules, garden beds, seed inventory, harvest records, and garden maintenance.</p>
+            <div class="project-visual"><span class="visual-corner" aria-hidden="true">05 / PREVIEW</span><p>No screenshot available.</p><span class="visual-note">Reserved for a future project image</span></div>
+            <!-- Replace .project-visual with a figure containing a local image and descriptive alt text when a screenshot is available. -->
+            <div class="project-specs"><section aria-labelledby="tech-garden"><h3 id="tech-garden">Technology stack</h3><ul class="skill-list"><li>Undecided</li></ul></section><section aria-labelledby="features-garden"><h3 id="features-garden">Proposed functionality</h3><ul class="project-feature-list"><li>Planting schedules and garden beds</li><li>Seed inventory</li><li>Harvest records and maintenance</li></ul></section></div>
+            <p class="project-scope-note">Concept only; implementation and scope have not been verified.</p>
+            <p class="project-links-note">Repository and demo links are not available yet.</p>
+          </article>
+          <article class="project-preview" id="project-job-assistant" data-category="Automation" aria-labelledby="title-job-assistant">
+            <div class="preview-topline"><span class="eyebrow">Archive / 06</span><span class="project-status">Scope to Verify</span></div>
+            <p class="project-category">Automation</p><h2 id="title-job-assistant">Job Application Assistant</h2><p class="project-description">Concept: Maintain an accurate master résumé, analyze jobs, prepare tailored résumés, and track applications.</p>
+            <div class="project-visual"><span class="visual-corner" aria-hidden="true">06 / PREVIEW</span><p>No screenshot available.</p><span class="visual-note">Reserved for a future project image</span></div>
+            <!-- Replace .project-visual with a figure containing a local image and descriptive alt text when a screenshot is available. -->
+            <div class="project-specs"><section aria-labelledby="tech-job-assistant"><h3 id="tech-job-assistant">Technology stack</h3><ul class="skill-list"><li>Undecided</li></ul></section><section aria-labelledby="features-job-assistant"><h3 id="features-job-assistant">Proposed functionality</h3><ul class="project-feature-list"><li>Accurate master résumé management</li><li>Job analysis and tailored résumé preparation</li><li>Application tracking</li></ul></section></div>
+            <p class="project-scope-note">Future application automation must respect site restrictions and require appropriate user approval. Implementation and scope have not been verified.</p>
+            <p class="project-links-note">Repository and demo links are not available yet.</p>
+          </article>
+          <article class="project-preview" id="project-finance" data-category="Data &amp; Analytics" aria-labelledby="title-finance">
+            <div class="preview-topline"><span class="eyebrow">Archive / 07</span><span class="project-status">Scope to Verify / Tentative</span></div>
+            <p class="project-category">Data &amp; Analytics</p><h2 id="title-finance">Personal Finance Dashboard</h2><p class="project-description">Concept: Track budgets, expenses, savings goals, and transaction trends.</p>
+            <div class="project-visual"><span class="visual-corner" aria-hidden="true">07 / PREVIEW</span><p>No screenshot available.</p><span class="visual-note">Reserved for a future project image</span></div>
+            <!-- Replace .project-visual with a figure containing a local image and descriptive alt text when a screenshot is available. -->
+            <div class="project-specs"><section aria-labelledby="tech-finance"><h3 id="tech-finance">Technology stack</h3><ul class="skill-list"><li>Undecided</li></ul></section><section aria-labelledby="features-finance"><h3 id="features-finance">Proposed functionality</h3><ul class="project-feature-list"><li>Budget and expense tracking</li><li>Savings goals</li><li>Transaction trends</li></ul></section></div>
+            <p class="project-scope-note">Tentative concept; may be replaced with a different concept later. Implementation and scope have not been verified.</p>
+            <p class="project-links-note">Repository and demo links are not available yet.</p>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="footer-inner container"><p>© <span id="year">2026</span> Robert Woods. Built with GitHub.</p><a class="text-link" href="contacts.html">Let's connect ↗</a></div>
