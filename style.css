@@ -590,3 +590,43 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
   .interests-page .story-photo-word { font-size: .7rem; letter-spacing: .2em; }
   .interests-page .story-index { gap: .5rem 1.5rem; }
 }
+
+/* CONTACT / Safe, optional terminal above a persistent direct-contact directory. */
+.contact-page .terminal-intro { padding-block: var(--space) 3rem; background: radial-gradient(ellipse at 90% 10%, #b8d2ad12, transparent 65%); }
+.contact-page .terminal-intro .lead { max-width: 49rem; }
+.contact-page .contact-terminal-section { padding-block: 2rem var(--space); }
+.contact-page .terminal-hint { font-size: .8rem; color: var(--muted); max-width: 16rem; margin-bottom: 0; }
+.contact-page .contact-terminal { border: 1px solid #b8d2ad45; border-radius: 1rem; overflow: hidden; background: #0b100d; box-shadow: 0 20px 70px #0003; font-family: Consolas, "Cascadia Code", "Courier New", monospace; font-size: .9rem; }
+.contact-page .terminal-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); background: #1a211b; color: var(--muted); font-size: .7rem; }
+.contact-page .terminal-dots { display: inline-flex; gap: .4rem; }
+.contact-page .terminal-dots i { width: 7px; height: 7px; border: 1px solid #b8d2ad65; border-radius: 50%; background: #b8d2ad20; }
+.contact-page .terminal-mode { margin-left: auto; color: var(--accent); }
+.contact-page .terminal-screen { padding: clamp(1.2rem, 3vw, 2rem); max-height: 430px; overflow-y: auto; overflow-wrap: anywhere; color: var(--muted); scrollbar-color: var(--border) var(--bg); }
+.contact-page .terminal-screen:focus-visible { outline-offset: -4px; }
+.contact-page .terminal-welcome,
+.contact-page .terminal-prompt { color: var(--accent); }
+.contact-page .terminal-entry { border-top: 1px solid #343e3460; padding-top: 1rem; margin-top: 1rem; }
+.contact-page .terminal-entry p { margin-bottom: .7rem; }
+.contact-page .terminal-controls { padding: 1.2rem clamp(1.2rem, 3vw, 2rem); border-top: 1px solid var(--border); }
+.contact-page .terminal-controls[hidden] { display: none; }
+.contact-page .terminal-form { display: flex; align-items: center; gap: .8rem; }
+.contact-page .terminal-form label { color: var(--accent); }
+.contact-page .terminal-form input { flex: 1; min-width: 0; width: 100%; border: 1px solid var(--border); background: #141c16; color: var(--text); padding: .7rem; border-radius: .3rem; font: inherit; }
+.contact-page .terminal-controls button { border: 1px solid var(--border); border-radius: .3rem; padding: .6rem .9rem; color: var(--accent); background: #19241b; font: inherit; cursor: pointer; transition: background .2s, border-color .2s; }
+.contact-page .terminal-controls button:hover { background: #2b3b29; border-color: var(--accent); }
+.contact-page .terminal-input-help { color: var(--muted); font-size: .7rem; margin-block: .8rem 1rem; }
+.contact-page .terminal-shortcuts { display: flex; flex-wrap: wrap; gap: .5rem; }
+.contact-page .terminal-shortcuts button { font-size: .75rem; }
+.contact-page .terminal-fallback { padding: 1rem 1.5rem; margin: 0; font-size: .7rem; border-top: 1px solid var(--border); color: var(--muted); }
+.contact-page .direct-contact { border-top: 1px solid var(--border); padding-block: var(--space); }
+.contact-page .contact-directory { margin-block: 2.5rem; }
+.contact-page .contact-directory > div { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 1.5rem; padding-block: 1.2rem; border-bottom: 1px solid var(--border); }
+.contact-page .contact-directory dt { color: var(--text); font-size: .95rem; }
+.contact-page .contact-directory dd { margin: 0; color: var(--muted); font-size: .9rem; overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .contact-page .terminal-intro { padding-top: 4rem; }
+  .contact-page .terminal-mode { display: none; }
+  .contact-page .terminal-bar { padding-inline: 1rem; gap: .7rem; }
+  .contact-page .contact-directory > div { grid-template-columns: 1fr; gap: .4rem; }
+  .contact-page .terminal-form { gap: .5rem; }
+}

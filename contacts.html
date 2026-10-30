@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,8 +26,52 @@
       </div>
     </nav>
   </header>
-  <main id="main-content" tabindex="-1" class="container">
-<section class="page-intro"><p class="eyebrow">06 / Let's connect</p><h1>Start with<br><span>a connection.</span></h1><p class="lead">Interested in my projects or want to connect? You can find my work on GitHub.</p></section><section class="page-content" aria-labelledby="github-title"><div class="contact-panel"><p class="eyebrow">Find me online</p><h2 id="github-title">Robert Woods on GitHub.</h2><p class="lead">Explore my repositories and the technology I'm learning.</p><div class="hero-actions"><a class="btn primary" href="https://github.com/Rwoods04" target="_blank" rel="noopener noreferrer">Visit my GitHub ↗<span class="sr-only">(opens in a new tab)</span></a><a class="btn" href="projects.html">Browse projects →</a></div></div></section>
+  <main id="main-content" tabindex="-1" class="container contact-page">
+    <section class="terminal-intro" aria-labelledby="contact-title">
+      <p class="eyebrow">06 / Let's connect</p><h1 id="contact-title">Start a<br><span>conversation.</span></h1>
+      <p class="lead">I'm Robert Woods, a Computer Information Technology student at Western Kentucky University, continuing to develop my skills in software development, networking, and IT systems.</p>
+      <p class="lead">I'm interested in connecting with professionals, exploring internship and entry-level opportunities, and learning from others working in technology.</p>
+    </section>
+    <section class="contact-terminal-section" aria-labelledby="terminal-title">
+      <div class="section-heading"><div><p class="eyebrow">A different way to connect</p><h2 id="terminal-title">The terminal is open.</h2></div><p class="terminal-hint">Type a command or choose one below.</p></div>
+      <div class="contact-terminal" data-contact-terminal>
+        <div class="terminal-bar"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>robert@portfolio / contact</span><span class="terminal-mode">Interactive directory</span></div>
+        <div class="terminal-screen" role="region" aria-label="Terminal command history" tabindex="0">
+          <p class="terminal-welcome">Welcome to Robert Woods' contact terminal.</p>
+          <p>Available commands: help, about, github, email, linkedin, resume, clear.</p>
+          <div data-terminal-history></div>
+        </div>
+        <div class="terminal-controls" hidden>
+          <form class="terminal-form" aria-label="Run a contact terminal command">
+            <label for="terminal-command"><span aria-hidden="true">❯</span><span class="sr-only">Terminal command</span></label>
+            <input id="terminal-command" name="command" type="text" maxlength="80" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="terminal-input-help">
+            <button type="submit">Run <span aria-hidden="true">↵</span></button>
+          </form>
+          <p id="terminal-input-help" class="terminal-input-help">Enter runs a command. Commands are case-insensitive. The latest 20 responses are kept.</p>
+          <div class="terminal-shortcuts" role="group" aria-label="Available terminal commands">
+            <button type="button" data-terminal-command="help">help</button>
+            <button type="button" data-terminal-command="about">about</button>
+            <button type="button" data-terminal-command="github">github</button>
+            <button type="button" data-terminal-command="email">email</button>
+            <button type="button" data-terminal-command="linkedin">linkedin</button>
+            <button type="button" data-terminal-command="resume">resume</button>
+            <button type="button" data-terminal-command="clear">clear</button>
+          </div>
+        </div>
+        <p class="terminal-fallback">Use the direct contact options below at any time. Terminal commands require JavaScript.</p>
+      </div>
+      <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-terminal-status></p>
+    </section>
+    <section class="direct-contact" aria-labelledby="direct-title">
+      <p class="eyebrow">Direct connections</p><h2 id="direct-title">Prefer the straightforward route?</h2>
+      <dl class="contact-directory">
+        <div><dt>GitHub</dt><dd><a class="text-link" href="https://github.com/Rwoods04" target="_blank" rel="noopener noreferrer">github.com/Rwoods04 <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></dd></div>
+        <div><dt>Professional email</dt><dd>Coming soon — professional email contact will be added later.</dd></div>
+        <div><dt>LinkedIn</dt><dd>Coming soon — a LinkedIn profile will be added later.</dd></div>
+        <div><dt>Résumé</dt><dd>Coming soon — a download will be added when an actual PDF is available.</dd></div>
+      </dl>
+      <a class="btn" href="index.html">Back to Home <span aria-hidden="true">↗</span></a>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="footer-inner container"><p>© <span id="year">2026</span> Robert Woods. Built with GitHub.</p><a class="text-link" href="contacts.html">Let's connect ↗</a></div>
