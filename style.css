@@ -306,3 +306,97 @@ html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transiti
   .education-page .education-hero { padding-top: 4rem; }
   .education-page .education-hint { max-width: none; }
 }
+
+/* ABOUT / Editorial portrait and story; scoped independently of other pages. */
+.about-page .about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block: var(--space);
+}
+.about-page .about-portrait {
+  position: relative;
+  margin: 0;
+  padding: .8rem;
+  border: 1px solid #b8d2ad30;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #b8d2ad0d, #101311);
+}
+.about-page .portrait-placeholder,
+.about-page .portrait-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: .5rem;
+}
+.about-page .portrait-placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 10%, #a9c39b24, transparent 65%),
+    linear-gradient(150deg, #28352a, #161d18 55%, #0c100e);
+}
+.about-page .portrait-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 9%;
+  border: 1px solid #b8d2ad18;
+  border-radius: 45% 45% .3rem .3rem;
+}
+.about-page .portrait-initials {
+  font-size: clamp(5rem, 11vw, 9rem);
+  font-weight: 600;
+  letter-spacing: -.1em;
+  color: #b8d2ad80;
+  padding-right: .1em;
+}
+.about-page .portrait-initials > span { color: var(--accent); }
+.about-page .portrait-rule { position: absolute; bottom: 14%; width: 2rem; height: 1px; background: var(--accent); }
+.about-page .portrait-photo { object-fit: cover; object-position: center 35%; }
+.about-page .about-portrait figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding: 1rem .3rem .2rem; font-size: .75rem; color: var(--accent); }
+.about-page .portrait-caption { color: var(--muted); }
+.about-page .about-introduction h1 { font-size: clamp(3.2rem, 5.8vw, 5.5rem); }
+.about-page .about-copy { color: var(--muted); max-width: 42rem; }
+.about-page .about-introduction .text-link { display: inline-block; margin-top: 1rem; }
+.about-page .about-section { padding-block: var(--space); border-top: 1px solid var(--border); }
+.about-page .about-section-heading { max-width: 45rem; }
+.about-page .curiosity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 3rem; }
+.about-page .curiosity-note { padding: 1.5rem 0 0; border-top: 1px solid #b8d2ad50; }
+.about-page .curiosity-number { display: block; margin-bottom: 2rem; font-size: .65rem; color: var(--accent); letter-spacing: .15em; }
+.about-page .curiosity-note p { color: var(--muted); }
+.about-page .about-purpose { display: grid; grid-template-columns: .6fr 1.4fr; gap: 2rem; padding: clamp(1.5rem, 4vw, 3rem); margin-top: 3rem; border: 1px solid var(--border); border-radius: var(--radius); background: radial-gradient(ellipse at top left, #b8d2ad12, transparent 70%), var(--surface); }
+.about-page .about-purpose p { margin-bottom: 0; }
+.about-page .about-purpose > p:last-child { color: var(--muted); font-size: 1.05rem; }
+.about-page .about-purpose strong { color: var(--text); font-weight: 600; }
+.about-page .about-purpose .eyebrow { padding-top: .4rem; }
+.about-page .about-direction { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); }
+.about-page .about-direction h2 span { color: var(--accent); }
+.about-page .direction-lead { color: var(--text); font-size: 1.25rem; }
+.about-page .about-explore-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.about-page .explore-link { display: flex; flex-direction: column; padding: 2rem; border: 1px solid var(--border); border-radius: 1rem; background: linear-gradient(145deg, #b8d2ad08, transparent); transition: border-color .2s, background .2s, transform .2s; }
+.about-page .explore-link:hover { transform: translateY(-3px); border-color: var(--accent); background: #b8d2ad0c; }
+.about-page .explore-label { display: flex; justify-content: space-between; gap: 1rem; color: var(--accent); font-size: .7rem; margin-bottom: 2rem; }
+.about-page .explore-title { display: block; font-size: 1.6rem; font-weight: 600; letter-spacing: -.03em; margin-bottom: .5rem; }
+.about-page .explore-description { color: var(--muted); font-size: .85rem; }
+@media (max-width: 900px) {
+  .about-page .about-hero { gap: 2rem; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; }
+  .about-page .about-introduction h1 { font-size: clamp(3rem, 6vw, 4.5rem); }
+  .about-page .about-purpose { grid-template-columns: 1fr; gap: 1rem; }
+  .about-page .explore-link { padding: 1.5rem; }
+}
+@media (max-width: 650px) {
+  .about-page .about-hero { grid-template-columns: minmax(0, 1fr); padding-top: 3rem; gap: 2.5rem; }
+  .about-page .about-portrait { width: min(100%, 360px); }
+  .about-page .portrait-initials { font-size: 7rem; }
+  .about-page .curiosity-grid,
+  .about-page .about-direction,
+  .about-page .about-explore-grid { grid-template-columns: minmax(0, 1fr); }
+  .about-page .curiosity-grid { gap: 1rem; }
+  .about-page .curiosity-number { margin-bottom: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-page .explore-link:hover { transform: none; }
+}
